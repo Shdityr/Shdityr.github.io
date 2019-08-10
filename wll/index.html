@@ -63,12 +63,13 @@
 <meta property="og:site_name" content="Shdityr">
 <meta property="og:description" content="$start \ form \ 2019.\ 8.\ 10$">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/wll/1.jpg">
-<meta property="og:updated_time" content="2019-08-10T06:44:48.457Z">
+<meta property="og:image" content="http://yoursite.com/wll/0.jpg">
+<meta property="og:image" content="http://yoursite.com/wll/9.jpg">
+<meta property="og:updated_time" content="2019-08-10T08:32:30.063Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="wll">
 <meta name="twitter:description" content="$start \ form \ 2019.\ 8.\ 10$">
-<meta name="twitter:image" content="http://yoursite.com/wll/1.jpg">
+<meta name="twitter:image" content="http://yoursite.com/wll/0.jpg">
   <link rel="canonical" href="http://yoursite.com/wll/">
 
 
@@ -229,7 +230,7 @@
                 
               
 
-              <time title="创建时间：2019-08-10 08:21:19 / 修改时间：14:44:48" itemprop="dateCreated datePublished" datetime="2019-08-10T08:21:19+08:00">2019-08-10</time>
+              <time title="创建时间：2019-08-10 08:21:19 / 修改时间：16:32:30" itemprop="dateCreated datePublished" datetime="2019-08-10T08:21:19+08:00">2019-08-10</time>
             </span>
           
             
@@ -257,7 +258,7 @@
 
       
         <p>$start \ form \ 2019.\ 8.\ 10$</p>
-<p><img src="1.jpg" alt="Image text"></p>
+<p><img src="0.jpg" alt="Image text"></p>
 <a id="more"></a>
 
 <h4 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h4><h5 id="1-无源汇有上下界可行流"><a href="#1-无源汇有上下界可行流" class="headerlink" title="1 无源汇有上下界可行流"></a>1 无源汇有上下界可行流</h5><p><a href="1.1.cpp">code</a></p>
@@ -314,6 +315,39 @@
 <p>$S$向每个机器连权值为买该种机器的价值的边，每个机器向需要向它的工作连权值为租赁费用的边，每份工作向$T$连权值为完成该工作收益的边。</p>
 <p>由于一旦割去代表购买一台机器的边就不会再割代表租用此台机器的边，一耽一份工作无法获利就会割去代表做这项工作的边。因而用总收入值减去最小割即为最大获利。</p>
 <p><a href="7.cpp">code</a></p>
+<h5 id="8-国集happiness"><a href="#8-国集happiness" class="headerlink" title="8 国集happiness"></a>8 国集happiness</h5><p>高一一班的座位表是个$n*m$的矩阵，经过一个学期的相处，每个同学和前后左右相邻的同学互相成为了好朋友。这学期要分文理科了，每个同学对于选择文科与理科有着自己的喜悦值，而一对好朋友如果能同时选文科或者理科，那么他们又将收获一些喜悦值。</p>
+<p>作为计算机竞赛教练的scp大老板，想知道如何分配可以使得全班的喜悦值总和最大。（$1 \leq n,m \leq 100$）</p>
+<p>第一行两个正整数n，m。</p>
+<p>接下来是六个矩阵</p>
+<ul>
+<li>第一个矩阵为n行m列</li>
+</ul>
+<p>此矩阵的第i行第j列的数字表示座位在第i行第j列的同学选择文科获得的喜悦值。</p>
+<ul>
+<li>第二个矩阵为n行m列</li>
+</ul>
+<p>此矩阵的第i行第j列的数字表示座位在第i行第j列的同学选择理科获得的喜悦值。</p>
+<ul>
+<li>第三个矩阵为n-1行m列</li>
+</ul>
+<p>此矩阵的第i行第j列的数字表示座位在第i行第j列的同学与第i+1行第j列的同学同时选择文科获得的额外喜悦值。</p>
+<ul>
+<li>第四个矩阵为n-1行m列</li>
+</ul>
+<p>此矩阵的第i行第j列的数字表示座位在第i行第j列的同学与第i+1行第j列的同学同时选择理科获得的额外喜悦值。</p>
+<ul>
+<li>第五个矩阵为n行m-1列</li>
+</ul>
+<p>此矩阵的第i行第j列的数字表示座位在第i行第j列的同学与第i行第j+1列的同学同时选择文科获得的额外喜悦值。</p>
+<ul>
+<li>第六个矩阵为n行m-1列</li>
+</ul>
+<p>此矩阵的第i行第j列的数字表示座位在第i行第j列的同学与第i行第j+1列的同学同时选择理科获得的额外喜悦值。</p>
+<p>不说了，见代码 <a href="8.cpp">code</a></p>
+<h5 id="9-BZOJ3774最优选择"><a href="#9-BZOJ3774最优选择" class="headerlink" title="9 BZOJ3774最优选择"></a>9 BZOJ3774最优选择</h5><p>一个$N*M$的方格图，控制某一个点要付出$A_{ij}$的代价，然后某个点如果被控制了，或者他周围的所有点（上下左右）都被控制了，那么他就算是被选择了的。一个点如果被选择了，那么可以得到$B_{ij}$的回报，选一个最优的方案，使得 回报-代价 尽可能大。（$1 \leq n,m \leq 50$）</p>
+<p>如图</p>
+<p><img src="9.jpg" alt="Imagetext"></p>
+<p><a href="9.cpp">code</a></p>
 
     </div>
 
@@ -419,7 +453,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#模板"><span class="nav-number">1.</span> <span class="nav-text">模板</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-无源汇有上下界可行流"><span class="nav-number">1.1.</span> <span class="nav-text">1 无源汇有上下界可行流</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-有源汇有上下界最大流"><span class="nav-number">1.2.</span> <span class="nav-text">2 有源汇有上下界最大流</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-有源汇有上下界最小流"><span class="nav-number">1.3.</span> <span class="nav-text">3 有源汇有上下界最小流</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-有源汇有上下界最小费用流"><span class="nav-number">1.4.</span> <span class="nav-text">4 有源汇有上下界最小费用流</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#题目"><span class="nav-number">2.</span> <span class="nav-text">题目</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-BZOJ280Emmy卖猪"><span class="nav-number">2.1.</span> <span class="nav-text">1 BZOJ280Emmy卖猪</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-NOI2008志愿者招募"><span class="nav-number">2.2.</span> <span class="nav-text">2 NOI2008志愿者招募</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-SCOI2007修车"><span class="nav-number">2.3.</span> <span class="nav-text">3 SCOI2007修车</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-SDOI2009晨跑"><span class="nav-number">2.4.</span> <span class="nav-text">4 SDOI2009晨跑</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-BZOJ4213贪吃蛇"><span class="nav-number">2.5.</span> <span class="nav-text">5 BZOJ4213贪吃蛇</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-CQOI2012交换棋子"><span class="nav-number">2.6.</span> <span class="nav-text">6 CQOI2012交换棋子</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-CEOI2008order"><span class="nav-number">2.7.</span> <span class="nav-text">7 CEOI2008order</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#模板"><span class="nav-number">1.</span> <span class="nav-text">模板</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-无源汇有上下界可行流"><span class="nav-number">1.1.</span> <span class="nav-text">1 无源汇有上下界可行流</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-有源汇有上下界最大流"><span class="nav-number">1.2.</span> <span class="nav-text">2 有源汇有上下界最大流</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-有源汇有上下界最小流"><span class="nav-number">1.3.</span> <span class="nav-text">3 有源汇有上下界最小流</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-有源汇有上下界最小费用流"><span class="nav-number">1.4.</span> <span class="nav-text">4 有源汇有上下界最小费用流</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#题目"><span class="nav-number">2.</span> <span class="nav-text">题目</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-BZOJ280Emmy卖猪"><span class="nav-number">2.1.</span> <span class="nav-text">1 BZOJ280Emmy卖猪</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-NOI2008志愿者招募"><span class="nav-number">2.2.</span> <span class="nav-text">2 NOI2008志愿者招募</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-SCOI2007修车"><span class="nav-number">2.3.</span> <span class="nav-text">3 SCOI2007修车</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-SDOI2009晨跑"><span class="nav-number">2.4.</span> <span class="nav-text">4 SDOI2009晨跑</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-BZOJ4213贪吃蛇"><span class="nav-number">2.5.</span> <span class="nav-text">5 BZOJ4213贪吃蛇</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-CQOI2012交换棋子"><span class="nav-number">2.6.</span> <span class="nav-text">6 CQOI2012交换棋子</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-CEOI2008order"><span class="nav-number">2.7.</span> <span class="nav-text">7 CEOI2008order</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-国集happiness"><span class="nav-number">2.8.</span> <span class="nav-text">8 国集happiness</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#9-BZOJ3774最优选择"><span class="nav-number">2.9.</span> <span class="nav-text">9 BZOJ3774最优选择</span></a></li></ol></li></ol></div>
             
 
           </div>
