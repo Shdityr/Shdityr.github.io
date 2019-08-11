@@ -65,7 +65,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/wll/0.jpg">
 <meta property="og:image" content="http://yoursite.com/wll/9.jpg">
-<meta property="og:updated_time" content="2019-08-11T02:32:42.392Z">
+<meta property="og:updated_time" content="2019-08-11T02:34:14.503Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="wll">
 <meta name="twitter:description" content="$start \ form \ 2019.\ 8.\ 10$">
@@ -241,7 +241,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-11 10:32:42" itemprop="dateModified" datetime="2019-08-11T10:32:42+08:00">2019-08-11</time>
+                <time title="修改时间：2019-08-11 10:34:14" itemprop="dateModified" datetime="2019-08-11T10:34:14+08:00">2019-08-11</time>
               </span>
             
           
@@ -364,7 +364,8 @@
 <p>由于点（$250000+$）和边（$1000000+$）范围比较大，因而要使用对偶图跑$dijkstra$来代替网络流最小割。</p>
 <p>$S$在左下侧，$T$在右上侧。路径左侧即为$0$的平原，路径右侧即为$1$的平原。有向边上的权值为从低原走上高原的人数。$dijkstra$</p>
 <p><a href="10.cpp">code</a></p>
-<h5 id="SDOI2010星际竞速"><a href="#SDOI2010星际竞速" class="headerlink" title="SDOI2010星际竞速"></a>SDOI2010星际竞速</h5><p>一个$n$个点$m$条边的有向无环图，边有边权。可以沿着边走，付出边权的代价，也可以进行“跃迁”，花费$A_i$的代价瞬移到点$i$。起点在图之外（第一次必须跃迁），求遍历所有点最小的代价。（$1 \leq n \leq 800,1\leq m \leq 15000$）</p>
+<h5 id="SDOI2010星际竞速"><a href="#SDOI2010星际竞速" class="headerlink" title="SDOI2010星际竞速"></a>SDOI2010星际竞速</h5><p>一个$n$个点$m$条边的有向无环图，边有边权。可以沿着边走，付出边权的代价，也可以进行“跃迁”，花费$A_i$的代价瞬移到点$i$。起点在图之外（第一次必须跃迁），求遍历所有点最小的代价。</p>
+<p>（$1 \leq n \leq 800,1\leq m \leq 15000$）</p>
 <p>$DAG$的最小路径覆盖求法：将点$i$拆成$i1$和$i2$，有向边$(u,v)$对应流图中$(u_2,v_1)$。容易发现流图是一张二分图。总点数-这张二分图的最大匹配 就是最少需要的边数。</p>
 <p>$pro$：一开始可以看作每个点都由它本身（$len=0$）覆盖，一个匹配的实质是减少一条边，最大匹配就是整合最多的边，使得所需值最小。</p>
 <p>$S$向$i_1$连容量$1$，费用$0$的边，向$i_2$连容量$1$，费用$A_i$的边，表示跃迁。</p>
