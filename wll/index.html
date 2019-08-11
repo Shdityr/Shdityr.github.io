@@ -65,7 +65,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/wll/0.jpg">
 <meta property="og:image" content="http://yoursite.com/wll/9.jpg">
-<meta property="og:updated_time" content="2019-08-11T02:34:14.503Z">
+<meta property="og:updated_time" content="2019-08-11T13:08:56.251Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="wll">
 <meta name="twitter:description" content="$start \ form \ 2019.\ 8.\ 10$">
@@ -241,7 +241,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-11 10:34:14" itemprop="dateModified" datetime="2019-08-11T10:34:14+08:00">2019-08-11</time>
+                <time title="修改时间：2019-08-11 21:08:56" itemprop="dateModified" datetime="2019-08-11T21:08:56+08:00">2019-08-11</time>
               </span>
             
           
@@ -373,6 +373,27 @@
 <p>$i_2$向$T$连容量$1$，费用$0$的边</p>
 <p>最小费用最大流</p>
 <p><a href="11.cpp">code</a></p>
+<h5 id="SCOI2012奇怪的游戏"><a href="#SCOI2012奇怪的游戏" class="headerlink" title="SCOI2012奇怪的游戏"></a>SCOI2012奇怪的游戏</h5><p>一个$n*m$的棋盘，每个格子上有一个数，每次操作会选择两个相邻的格子，并将上面的两个数各加$1$。求最少需要多少次操作才能使得棋盘上所有数都相同，如果无法达成则输出$-1$。</p>
+<p>（$task \leq 10,1 \leq n,m \leq 40$  所有数为正整数且小于$1e9$）</p>
+<p>将棋盘黑白染色。设$numb$为黑格个数，$B$为初始时黑格上所有数之和；$numw$为白格个数，$W$为初始时白格上所有数之和。设最终棋盘上所有数都等于$X$。由于每次都是相邻的两个格子加一，因而白格和黑格增量相等，有  $numb<em>X-B=numw</em>X-W$，变形得$X=\frac{B-W}{numb-numw}$。</p>
+<p>当$numb\neq numw$ 时$X$可以通过计算得出，再进行检验。</p>
+<p>当$numb=numw$时，棋盘总格数必然是偶数，因而$n$和$m$至少有一个是偶数。所以当$X$可以达到时，$X+1$也一定可以通过再覆盖一层来达到，具有可二分性。</p>
+<p>要检验一个$X$是否可行，只需要$S$向所有黑点连容量$X-val$的边，白点向$T$连容量$X-val$的边，黑点向周围的白点连容量$INF$的边。若能$S$的所有出边都能够流满，则$X$可行。</p>
+<p>求出$X$后 $numb<em>X-B$ 或 $numw</em>X-W$ 即为操作次数</p>
+<p>由于多组数据，我开始竟然用$T$表示$task$的数量。。。。</p>
+<p>边权比较大，注意使用$long long$和更大的$INF$。</p>
+<p><a href="12.cpp">code</a></p>
+<h5 id="ZJOI2008狼和羊的故事"><a href="#ZJOI2008狼和羊的故事" class="headerlink" title="ZJOI2008狼和羊的故事"></a>ZJOI2008狼和羊的故事</h5><p>$n*m$的一张网格图，其中有些格子是狼的领地，有些格子是羊的领地，有些格子不是任何人的领地。网格图的边缘已经围上了栅栏，要求使用最少的栅栏将狼和羊分解开。</p>
+<p>（$1\leq n,m \leq 100$）</p>
+<p>$S$向狼的领地连$INF$边，羊的领地向$T$连$INF$边，图中点与点之间连四连通双向边，边权为$1$。</p>
+<p>$INF$边不会被割去，这张图的最小割就是所需的最小栅栏数。</p>
+<p><a href="13.cpp">code</a></p>
+<h5 id="SHOI2007善意的投票"><a href="#SHOI2007善意的投票" class="headerlink" title="SHOI2007善意的投票"></a>SHOI2007善意的投票</h5><p>幼儿园里有$n$个小朋友打算通过投票来决定睡不睡午觉。每个人都有自己的主见，但是为了照顾一下自己朋友的想法，他们也可以投和自己本来意愿相反的票。我们定义一次投票的冲突数为好朋友之间发生冲突的总数加上和所有和自己本来意愿发生冲突的人数。每位小朋友应该怎样投票，才能使冲突数最小？</p>
+<p>（$2\leq n \leq 300,1 \leq m \leq \frac{n*(n-1)}{2}$）</p>
+<p>$S$向原本意愿睡觉的小朋友连权值为$1$的边，原本意愿不睡觉的小朋友向$T$连权值为$1$的边。</p>
+<p>意愿不同的好朋友之间连双向边，因为他们可能顺从他们两个人中任意一个的意志。</p>
+<p>最小割即为最小冲突数。</p>
+<p><a href="14.cpp">code</a></p>
 
     </div>
 
@@ -481,7 +502,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#模板"><span class="nav-number">1.</span> <span class="nav-text">模板</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#无源汇有上下界可行流"><span class="nav-number">1.1.</span> <span class="nav-text">无源汇有上下界可行流</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#有源汇有上下界最大流"><span class="nav-number">1.2.</span> <span class="nav-text">有源汇有上下界最大流</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#有源汇有上下界最小流"><span class="nav-number">1.3.</span> <span class="nav-text">有源汇有上下界最小流</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#有源汇有上下界最小费用流"><span class="nav-number">1.4.</span> <span class="nav-text">有源汇有上下界最小费用流</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#题目"><span class="nav-number">2.</span> <span class="nav-text">题目</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#BZOJ280Emmy卖猪"><span class="nav-number">2.1.</span> <span class="nav-text">BZOJ280Emmy卖猪</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#NOI2008志愿者招募"><span class="nav-number">2.2.</span> <span class="nav-text">NOI2008志愿者招募</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#SCOI2007修车"><span class="nav-number">2.3.</span> <span class="nav-text">SCOI2007修车</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#SDOI2009晨跑"><span class="nav-number">2.4.</span> <span class="nav-text">SDOI2009晨跑</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#BZOJ4213贪吃蛇"><span class="nav-number">2.5.</span> <span class="nav-text">BZOJ4213贪吃蛇</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#CQOI2012交换棋子"><span class="nav-number">2.6.</span> <span class="nav-text">CQOI2012交换棋子</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#CEOI2008order"><span class="nav-number">2.7.</span> <span class="nav-text">CEOI2008order</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#国集happiness"><span class="nav-number">2.8.</span> <span class="nav-text">国集happiness</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#BZOJ3774最优选择"><span class="nav-number">2.9.</span> <span class="nav-text">BZOJ3774最优选择</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#NOI2010海拔"><span class="nav-number">2.10.</span> <span class="nav-text">NOI2010海拔</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#SDOI2010星际竞速"><span class="nav-number">2.11.</span> <span class="nav-text">SDOI2010星际竞速</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#模板"><span class="nav-number">1.</span> <span class="nav-text">模板</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#无源汇有上下界可行流"><span class="nav-number">1.1.</span> <span class="nav-text">无源汇有上下界可行流</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#有源汇有上下界最大流"><span class="nav-number">1.2.</span> <span class="nav-text">有源汇有上下界最大流</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#有源汇有上下界最小流"><span class="nav-number">1.3.</span> <span class="nav-text">有源汇有上下界最小流</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#有源汇有上下界最小费用流"><span class="nav-number">1.4.</span> <span class="nav-text">有源汇有上下界最小费用流</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#题目"><span class="nav-number">2.</span> <span class="nav-text">题目</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#BZOJ280Emmy卖猪"><span class="nav-number">2.1.</span> <span class="nav-text">BZOJ280Emmy卖猪</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#NOI2008志愿者招募"><span class="nav-number">2.2.</span> <span class="nav-text">NOI2008志愿者招募</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#SCOI2007修车"><span class="nav-number">2.3.</span> <span class="nav-text">SCOI2007修车</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#SDOI2009晨跑"><span class="nav-number">2.4.</span> <span class="nav-text">SDOI2009晨跑</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#BZOJ4213贪吃蛇"><span class="nav-number">2.5.</span> <span class="nav-text">BZOJ4213贪吃蛇</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#CQOI2012交换棋子"><span class="nav-number">2.6.</span> <span class="nav-text">CQOI2012交换棋子</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#CEOI2008order"><span class="nav-number">2.7.</span> <span class="nav-text">CEOI2008order</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#国集happiness"><span class="nav-number">2.8.</span> <span class="nav-text">国集happiness</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#BZOJ3774最优选择"><span class="nav-number">2.9.</span> <span class="nav-text">BZOJ3774最优选择</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#NOI2010海拔"><span class="nav-number">2.10.</span> <span class="nav-text">NOI2010海拔</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#SDOI2010星际竞速"><span class="nav-number">2.11.</span> <span class="nav-text">SDOI2010星际竞速</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#SCOI2012奇怪的游戏"><span class="nav-number">2.12.</span> <span class="nav-text">SCOI2012奇怪的游戏</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ZJOI2008狼和羊的故事"><span class="nav-number">2.13.</span> <span class="nav-text">ZJOI2008狼和羊的故事</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#SHOI2007善意的投票"><span class="nav-number">2.14.</span> <span class="nav-text">SHOI2007善意的投票</span></a></li></ol></li></ol></div>
             
 
           </div>
