@@ -64,7 +64,7 @@
 <meta property="og:description" content="$start \ from \ 2019.\ 8.\ 16$">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/sjjg/0.jpg">
-<meta property="og:updated_time" content="2019-08-16T10:40:30.273Z">
+<meta property="og:updated_time" content="2019-08-16T12:54:37.744Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sjjg">
 <meta name="twitter:description" content="$start \ from \ 2019.\ 8.\ 16$">
@@ -203,7 +203,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shdityr">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://i.loli.net/2019/08/16/JGqWe5vCnaThKB7.jpg">
+      <meta itemprop="image" content="/31576.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -229,7 +229,7 @@
                 
               
 
-              <time title="创建时间：2019-08-16 17:13:29 / 修改时间：18:40:30" itemprop="dateCreated datePublished" datetime="2019-08-16T17:13:29+08:00">2019-08-16</time>
+              <time title="创建时间：2019-08-16 17:13:29 / 修改时间：20:54:37" itemprop="dateCreated datePublished" datetime="2019-08-16T17:13:29+08:00">2019-08-16</time>
             </span>
           
             
@@ -270,6 +270,11 @@
 <p>（$1\leq n \leq 100000,1\leq k \leq 100$）</p>
 <p>维护一个大小为$2k$的小根堆，如果可能的最大距离小于堆顶就剪掉，其它和平面最近点对一样，所有点都问一次即可。</p>
 <p><a href="1.3.cpp">code</a></p>
+<h5 id="BZOJ3489A-simple-rmq-problem"><a href="#BZOJ3489A-simple-rmq-problem" class="headerlink" title="BZOJ3489A simple rmq problem"></a>BZOJ3489A simple rmq problem</h5><p>给定一个长度为$n$的序列。有$m$个询问，每次询问要求在$[l,r]$之间找到一个在这个区间内只出现过一次的最大的数。</p>
+<p>（$1\leq n \leq 100000,1\leq m \leq 200000$）</p>
+<p>每个点有四个维度：{前一个与之相同的位置，本身的位置，本身的值，后一个与之相同的位置}。</p>
+<p>对于询问[$l,r]$，相当于查询$L=(0,l,0,r+1)$与$R=(l-1,r,inf,n+1)$之间所有元素第三维（点值）的最大值。每次递归到一个点，若其不被$L，R$严格包含，则直接返回；否则更新$L$的第三维并继续递归下去。最后$L$的第三维就是本次询问的答案。</p>
+<p><a href="1.4.cpp">code</a></p>
 
     </div>
 
@@ -350,7 +355,7 @@
 
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image"
-      src="https://i.loli.net/2019/08/16/JGqWe5vCnaThKB7.jpg"
+      src="/31576.png"
       alt="Shdityr">
   <p class="site-author-name" itemprop="name">Shdityr</p>
   <div class="site-description motion-element" itemprop="description"></div>
@@ -398,7 +403,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#KDtree"><span class="nav-number">1.</span> <span class="nav-text">KDtree</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#BZOJ4066简单题"><span class="nav-number">1.1.</span> <span class="nav-text">BZOJ4066简单题</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#SJY摆棋子（天使玩偶）"><span class="nav-number">1.2.</span> <span class="nav-text">SJY摆棋子（天使玩偶）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#CQOI2016K远点对"><span class="nav-number">1.3.</span> <span class="nav-text">CQOI2016K远点对</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#KDtree"><span class="nav-number">1.</span> <span class="nav-text">KDtree</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#BZOJ4066简单题"><span class="nav-number">1.1.</span> <span class="nav-text">BZOJ4066简单题</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#SJY摆棋子（天使玩偶）"><span class="nav-number">1.2.</span> <span class="nav-text">SJY摆棋子（天使玩偶）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#CQOI2016K远点对"><span class="nav-number">1.3.</span> <span class="nav-text">CQOI2016K远点对</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#BZOJ3489A-simple-rmq-problem"><span class="nav-number">1.4.</span> <span class="nav-text">BZOJ3489A simple rmq problem</span></a></li></ol></li></ol></div>
             
 
           </div>
