@@ -26,8 +26,11 @@ sidebar:
   offset: 12
   dimmer: false
 
+# 头像。原站外链到 https://i.loli.net/2019/08/16/PUyzfsYGkvNthAW.png，
+# 仓库里本来就有同一张图的本地副本（images/31576.png，100x100），
+# 改用本地文件，免得哪天那个免费图床关了头像就没了。
 avatar:
-  url:
+  url: /images/31576.png
   rounded: false
   rotated: false
 
