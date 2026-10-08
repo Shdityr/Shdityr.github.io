@@ -1,0 +1,93 @@
+# NexT 主题配置（NexT 8）
+# 文档: https://theme-next.js.org/docs/
+
+# 配色方案，和原站保持一致
+scheme: Gemini
+
+favicon:
+  small: /images/favicon-16x16-next.png
+  medium: /images/favicon-32x32-next.png
+  apple_touch_icon: /images/apple-touch-icon-next.png
+
+# 菜单，和原站一致：只有首页和归档
+menu:
+  home: / || fa fa-home
+  archives: /archives/ || fa fa-archive
+
+menu_settings:
+  icons: true
+  badges: false
+
+# 侧边栏
+sidebar:
+  position: left
+  display: post
+  padding: 18
+  offset: 12
+  dimmer: false
+
+avatar:
+  url:
+  rounded: false
+  rotated: false
+
+# 页脚
+footer:
+  since: 2019
+  icon:
+    name: fa fa-heart
+    animated: false
+    color: '#808080'
+  powered: true
+
+# 文章
+post_meta:
+  item_text: true
+  created_at: true
+  updated_at:
+    enabled: true
+    another_day: true
+  categories: true
+
+# 不蒜子访问统计，和原站一致
+busuanzi_count:
+  enable: true
+  total_visitors: true
+  total_visitors_icon: fa fa-user
+  total_views: true
+  total_views_icon: fa fa-eye
+  post_views: true
+  post_views_icon: far fa-eye
+
+# 代码块复制按钮
+codeblock:
+  copy_button:
+    enable: true
+    show_result: true
+    style:
+
+back2top:
+  enable: true
+  sidebar: true
+  scrollpercent: true
+
+motion:
+  enable: true
+  async: false
+  transition:
+    post_block: fadeIn
+    post_header: slideDownIn
+    post_body: slideDownIn
+    coll_header: slideLeftIn
+    sidebar: slideUpIn
+
+# 公式渲染。和原站一样用 MathJax 在浏览器端渲染：
+# 这些文章公式极多（wll 一篇就有 444 个），构建时渲染成 SVG 会让页面从
+# 42KB 涨到 2.3MB。客户端渲染页面小，MathJax 还能跨页面走 CDN 缓存。
+# 公式内容已由 lib/markdown-it-math-protect.js 保护，不会再被 Markdown 啃坏。
+math:
+  every_page: true
+  mathjax:
+    enable: true
+    tags: none
+    display_overflow: scroll

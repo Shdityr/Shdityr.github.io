@@ -1,0 +1,59 @@
+name: 构建并部署博客
+
+on:
+  push:
+    branches: [source]      # 推 Markdown 到 source 分支就会自动发布
+  workflow_dispatch:         # 也可以在 Actions 页面手动触发
+
+permissions:
+  contents: write            # 需要写权限才能推到 master
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出源文件
+        uses: actions/checkout@v4
+
+      - name: 准备 Node 环境
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: 安装依赖
+        run: npm ci
+
+      - name: 生成静态文件
+        run: |
+          npx hexo clean
+          npx hexo generate
+          touch public/.nojekyll
+
+      - name: 发布到 master 分支
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -e
+          git clone --depth 1 --branch master \
+            "https://x-access-token:${GH_TOKEN}@github.com/${REPO}.git" deploy
+
+          # 用新产物替换旧内容，保留 .git 以延续 master 的提交历史
+          find deploy -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+          cp -R public/. deploy/
+
+          cd deploy
+          git config user.name  'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add -A
+          if git diff --cached --quiet; then
+            echo "生成结果与线上一致，无需发布。"
+          else
+            git commit -m "Site updated: $(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M:%S')"
+            git push origin master
+          fi

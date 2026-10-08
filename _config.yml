@@ -1,0 +1,97 @@
+# Hexo 站点配置
+# 文档: https://hexo.io/docs/configuration.html
+
+# 站点信息
+title: Shdityr
+subtitle: ''
+description: ''
+keywords:
+author: Shdityr
+language: zh-CN
+timezone: 'Asia/Shanghai'
+
+# 网址
+# 原来一直是默认的 http://yoursite.com，导致 RSS、og:url、站点地图里的链接全是错的，现已修正
+url: https://shdityr.github.io
+permalink: :title/
+permalink_defaults:
+pretty_urls:
+  trailing_index: false
+  trailing_html: false
+
+# 目录
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# 新建文章
+new_post_name: :title.md
+default_layout: post
+titlecase: false
+external_link:
+  enable: true
+  field: site
+  exclude:
+filename_case: 0
+render_drafts: false
+# 每篇文章配一个同名文件夹放图片和代码，用相对路径引用
+post_asset_folder: true
+relative_link: false
+future: true
+syntax_highlighter: highlight.js
+highlight:
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+  wrap: true
+  hljs: false
+
+# 首页
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+
+# 分类与标签
+default_category: uncategorized
+category_map:
+tag_map:
+
+# 日期/时间格式
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+updated_option: 'mtime'
+
+# 分页
+per_page: 10
+pagination_dir: page
+
+# Markdown 渲染器
+# 换掉旧的 marked：它不保护 $...$ 里的内容，当年把公式里的 *...* 误判成了斜体
+markdown:
+  preset: 'default'
+  render:
+    html: true
+    xhtmlOut: false
+    breaks: false
+    linkify: true
+    typographer: false
+  enable_rules:
+  disable_rules:
+  plugins:
+    # 只保护公式不被 Markdown 解析，渲染交给前端 MathJax（见 _config.next.yml）
+    - name: ./lib/markdown-it-math-protect.js
+  anchors:
+    level: 2
+    collisionSuffix: ''
+    permalink: false
+
+# 主题
+theme: next
+
+# 部署由 GitHub Actions 完成，见 .github/workflows/deploy.yml
