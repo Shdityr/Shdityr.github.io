@@ -89,7 +89,12 @@ markdown:
   anchors:
     level: 2
     collisionSuffix: ''
-    permalink: false
+    # 给标题加悬停锚点，和旧站一致。NexT 的 CSS 认 headerlink 这个类名，
+    # 用 ::before 注入链接图标，所以元素内容留空。
+    permalink: true
+    permalinkClass: headerlink
+    permalinkSymbol: ''
+    permalinkSide: left
 
 # 主题
 theme: next
