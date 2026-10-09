@@ -137,7 +137,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#KDtree"><span class="nav-number">1.</span> <span class="nav-text">KDtree</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#BZOJ4066%E7%AE%80%E5%8D%95%E9%A2%98"><span class="nav-number">1.1.</span> <span class="nav-text">BZOJ4066简单题</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#SJY%E6%91%86%E6%A3%8B%E5%AD%90%EF%BC%88%E5%A4%A9%E4%BD%BF%E7%8E%A9%E5%81%B6%EF%BC%89"><span class="nav-number">1.2.</span> <span class="nav-text">SJY摆棋子（天使玩偶）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#CQOI2016K%E8%BF%9C%E7%82%B9%E5%AF%B9"><span class="nav-number">1.3.</span> <span class="nav-text">CQOI2016K远点对</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#BZOJ3489A-simple-rmq-problem"><span class="nav-number">1.4.</span> <span class="nav-text">BZOJ3489A simple rmq problem</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#KDtree"><span class="nav-number">1.</span> <span class="nav-text">KDtree</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#BZOJ4066%E7%AE%80%E5%8D%95%E9%A2%98"><span class="nav-number">1.1.</span> <span class="nav-text">BZOJ4066简单题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SJY%E6%91%86%E6%A3%8B%E5%AD%90%EF%BC%88%E5%A4%A9%E4%BD%BF%E7%8E%A9%E5%81%B6%EF%BC%89"><span class="nav-number">1.2.</span> <span class="nav-text">SJY摆棋子（天使玩偶）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CQOI2016K%E8%BF%9C%E7%82%B9%E5%AF%B9"><span class="nav-number">1.3.</span> <span class="nav-text">CQOI2016K远点对</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BZOJ3489A-simple-rmq-problem"><span class="nav-number">1.4.</span> <span class="nav-text">BZOJ3489A simple rmq problem</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -240,21 +240,21 @@
     <div class="post-body" itemprop="articleBody"><p>$start \ from \ 2019.\ 8.\ 16$</p>
 <span id="more"></span>
 <p><img src="0.jpg" alt="Image text"></p>
-<h4 id="KDtree">KDtree</h4>
-<h5 id="BZOJ4066简单题">BZOJ4066简单题</h5>
+<h2 id="KDtree"><a class="headerlink" href="#KDtree"></a>KDtree</h2>
+<h3 id="BZOJ4066简单题"><a class="headerlink" href="#BZOJ4066简单题"></a>BZOJ4066简单题</h3>
 <p>一个$n*n$的棋盘，初始全为$0$，支持两种操作。操作$1$：将格子$(x,y)$上的数字加上$A$。操作$2$：询问$(x_1,x_2,y_1,y_2)$这个矩形内的点权和。强制在线。</p>
 <p>（$1\leq n \leq 500000,1\leq 操作数\leq200000,内存限制20M$）</p>
 <p><a href="1.1.cpp">code</a></p>
-<h5 id="SJY摆棋子（天使玩偶）">SJY摆棋子（天使玩偶）</h5>
+<h3 id="SJY摆棋子（天使玩偶）"><a class="headerlink" href="#SJY摆棋子（天使玩偶）"></a>SJY摆棋子（天使玩偶）</h3>
 <p>棋盘上初始有$n$个点，支持两种操作。操作$1$：加入一个点$(x,y)$。操作$2$：询问与$(x,y)$与距离最近的点的距离（曼哈顿距离）。</p>
 <p>（$1\leq n \leq 500000,1\leq 操作数\leq 500000$）</p>
 <p><a href="1.2.cpp">code</a></p>
-<h5 id="CQOI2016K远点对">CQOI2016K远点对</h5>
+<h3 id="CQOI2016K远点对"><a class="headerlink" href="#CQOI2016K远点对"></a>CQOI2016K远点对</h3>
 <p>已知平面上$n$个点的坐标，求欧氏距离下的第$k$远点对的距离。</p>
 <p>（$1\leq n \leq 100000,1\leq k \leq 100$）</p>
 <p>维护一个大小为$2k$的小根堆，如果可能的最大距离小于堆顶就剪掉，其它和平面最近点对一样，所有点都问一次即可。</p>
 <p><a href="1.3.cpp">code</a></p>
-<h5 id="BZOJ3489A-simple-rmq-problem">BZOJ3489A simple rmq problem</h5>
+<h3 id="BZOJ3489A-simple-rmq-problem"><a class="headerlink" href="#BZOJ3489A-simple-rmq-problem"></a>BZOJ3489A simple rmq problem</h3>
 <p>给定一个长度为$n$的序列。有$m$个询问，每次询问要求在$[l,r]$之间找到一个在这个区间内只出现过一次的最大的数。</p>
 <p>（$1\leq n \leq 100000,1\leq m \leq 200000$）</p>
 <p>每个点有四个维度：{前一个与之相同的位置，本身的位置，本身的值，后一个与之相同的位置}。</p>

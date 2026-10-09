@@ -137,7 +137,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#LGOJ4755-Beautiful-Pair"><span class="nav-number">1.1.</span> <span class="nav-text">LGOJ4755 Beautiful Pair</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#COCI2015Norma"><span class="nav-number">1.2.</span> <span class="nav-text">COCI2015Norma</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ZJOI2016%E6%97%85%E8%A1%8C%E8%80%85"><span class="nav-number">1.3.</span> <span class="nav-text">ZJOI2016旅行者</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LGOJ4755-Beautiful-Pair"><span class="nav-number">1.1.</span> <span class="nav-text">LGOJ4755 Beautiful Pair</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#COCI2015Norma"><span class="nav-number">1.2.</span> <span class="nav-text">COCI2015Norma</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ZJOI2016%E6%97%85%E8%A1%8C%E8%80%85"><span class="nav-number">1.3.</span> <span class="nav-text">ZJOI2016旅行者</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -246,8 +246,8 @@
     <div class="post-body" itemprop="articleBody"><p>$start\ from\ 2019.\ 8.\ 14 $</p>
 <span id="more"></span>
 <p><img src="0.jpg" alt="Image text"></p>
-<h4 id="题目">题目</h4>
-<h5 id="LGOJ4755-Beautiful-Pair">LGOJ4755 Beautiful Pair</h5>
+<h2 id="题目"><a class="headerlink" href="#题目"></a>题目</h2>
+<h3 id="LGOJ4755-Beautiful-Pair"><a class="headerlink" href="#LGOJ4755-Beautiful-Pair"></a>LGOJ4755 Beautiful Pair</h3>
 <p>给出一个长度为$n$的序列$a$，求出有多少个区间满足左右端点的乘积不大于区间最大值。</p>
 <p>（$1\leq n \leq 10^5,1\leq a_i\leq 10^9$）</p>
 <p>最值分治。</p>
@@ -256,7 +256,7 @@
 <p>然后递归下去处理$(l,p-1)$，$(p+1,r)$即可。</p>
 <p>总复杂度$O(nlog^2n)$，复杂度瓶颈：主席树。</p>
 <p><a href="1.cpp">code</a></p>
-<h5 id="COCI2015Norma">COCI2015Norma</h5>
+<h3 id="COCI2015Norma"><a class="headerlink" href="#COCI2015Norma"></a>COCI2015Norma</h3>
 <p>给定一个正整数序列$a_1,a_2,\cdots,a_n$，求</p>
 <p>$\sum_ {i=1} ^n \sum_ {j=i} ^n (j-i+1) min(a_{i},a_{i+1}, \cdots  , a_{j}) max( a_{i},a_ {i+1}, \cdots ,a_{j} )$</p>
 <p>结果对$10^9$取模。</p>
@@ -266,7 +266,7 @@
 <p>两个单调的指针$p$，$q$维护$[mid+1,r]$中第一个使得$min(mid+1,p)&lt;mn$的位置$p$，和第一个使得$max(mid+1,q)&gt;mx$的位置$q$。对于每一个$i$，先扫到对应于它的$p$，$q$，再分$[mid+1,min(p,q)-1]$，$[min(p,q),max(p,q)-1]$，$[max(p,q),r]$三段进行统计即可。</p>
 <p>需要推一推式子。</p>
 <p><a href="2.cpp">code</a></p>
-<h5 id="ZJOI2016旅行者">ZJOI2016旅行者</h5>
+<h3 id="ZJOI2016旅行者"><a class="headerlink" href="#ZJOI2016旅行者"></a>ZJOI2016旅行者</h3>
 <p>给定一个$n*m$的网格图，以及$q$个询问，每个询问给出两个点，求它们之间的最短距离。</p>
 <p>（$1\leq n*m \leq 20000,1\leq q \leq 10^5$）</p>
 <p>每次处理一个$(l_1,l_2,r_1,r_2)$的矩形，平行于较短的一边对矩形进行分割。对于分割线上的每一个点跑一遍$(l_1,l_2,r_1,r_2)$内的最短路，并对它所含括的所有询问进行更新。然后，遍历含括的所有询问，如果有询问被剩下的两个小矩形中的某一个完全包含，就将这个询问分给对应的小矩形。</p>
